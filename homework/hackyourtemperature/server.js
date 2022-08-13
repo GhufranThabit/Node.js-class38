@@ -12,7 +12,7 @@ app.use(express.json());
 app.post("/weather", (req, res) => {
   const cityName = req.body.name;
   if (!cityName) {
-    return res.send({ msg: "Please include the city name " });
+    return res.status(400).send({ msg: "Please include the city name " });
   }
   res.send(cityName);
 });
